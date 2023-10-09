@@ -1,17 +1,17 @@
 {
   "scripts": {
     "test": "jest --coverage --noStackTrace --silent",
-    "action": "jest /src/__tests__/Actions.test.js --coverage --noStackTrace --silent",
-    "bill": "jest /src/__tests__/Bill.test.js --coverage --noStackTrace --silent",
-    "dashboard": "jest /src/__tests__/Dashboard.test.js --coverage --noStackTrace --silent",
-    "dashboardui": "jest /src/__tests__/DashboardFormUI.test.js --coverage --noStackTrace --silent",
-    "errorpage": "jest /src/__tests__/ErrorPage.test.js --coverage --noStackTrace --silent",
-    "loadingpage": "jest /src/__tests__/LoadingPage.test.js --coverage --noStackTrace --silent",
-    "login": "jest /src/__tests__/Login.test.js --coverage --noStackTrace --silent",
-    "logout": "jest /src/__tests__/Logout.test.js --coverage --noStackTrace --silent",
-    "newbill": "jest /src/__tests__/NewBill.test.js --coverage --noStackTrace --silent",
-    "routes": "jest /src/__tests__/Routes.test.js --coverage --noStackTrace --silent",
-    "verticallayout": "jest /src/__tests__/VerticalLayout.test.js --coverage --noStackTrace --silent"
+    "action": "jest /src/__tests__/Actions.test.js",
+    "bill": "jest /src/__tests__/Bill.test.js",
+    "dashboard": "jest /src/__tests__/Dashboard.test.js",
+    "dashboardui": "jest /src/__tests__/DashboardFormUI.test.js",
+    "errorpage": "jest /src/__tests__/ErrorPage.test.js",
+    "loadingpage": "jest /src/__tests__/LoadingPage.test.js",
+    "login": "jest /src/__tests__/Login.test.js",
+    "logout": "jest /src/__tests__/Logout.test.js",
+    "newbill": "jest /src/__tests__/NewBill.test.js",
+    "routes": "jest /src/__tests__/Routes.test.js",
+    "verticallayout": "jest /src/__tests__/VerticalLayout.test.js"
   },
   "jest": {
     "verbose": false,
@@ -35,12 +35,17 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-env": "^7.10.4",
+    "@swc/core": "^1.2.249",
+    "@swc/jest": "^0.2.22",
     "@testing-library/dom": "^7.20.0",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/user-event": "^12.0.11",
     "babel-jest": "^26.1.0",
-    "jest": "^26.1.0",
+    "eslint": "^8.23.0",
+    "eslint-plugin-jest": "^27.0.2",
+    "jest": "^26.6.3",
     "jest-environment-jsdom": "^27.4.6",
     "jest-html-reporter": "^3.1.3"
   }

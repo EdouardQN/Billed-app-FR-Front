@@ -15,6 +15,21 @@ export default class NewBill {
     this.billId = null
     new Logout({ document, localStorage, onNavigate })
   }
+
+  fileValidation = file => {
+    const fileTypes = ["image/jpeg", "image/jpg", "image/png"];
+    if (!fileTypes.includes(file.type)) {
+      this.document
+        .querySelector(`input[data-testid="file"]`)
+        .classList.add("is-invalid");
+      return false;
+    }
+    this.document
+      .querySelector(`input[data-testid="file"]`)
+      .classList.remove("is-invalid");
+    return true;
+  };
+
   handleChangeFile = e => {
     e.preventDefault()
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
@@ -25,7 +40,7 @@ export default class NewBill {
     formData.append('file', file)
     formData.append('email', email)
 
-    this.store
+    this.fileValidation(file) && this.store
       .bills()
       .create({
         data: formData,
@@ -59,6 +74,10 @@ export default class NewBill {
     }
     this.updateBill(bill)
     this.onNavigate(ROUTES_PATH['Bills'])
+
+    if (!this.fileName) return;
+    this.updateBill(bill);
+    this.onNavigate(ROUTES_PATH["Bills"]);
   }
 
   // not need to cover this function by tests
